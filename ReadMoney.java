@@ -10,7 +10,7 @@ public class ReadMoney {
   private static String nickel1;
   private static String coin1;
   public static void main(String argv[]) throws Exception {
-    FileInputStream fis = new FileInputStream("quarter.out");
+    FileInputStream fis = new FileInputStream("money.out");
     ObjectInputStream ois = new ObjectInputStream(fis);
     Money money = (Money) ois.readObject();
     System.out.println("The amount of money is: "+money);
@@ -34,12 +34,11 @@ public class ReadMoney {
     fis.close();
   }
   public static void processOutput(TextArea textArea){
-    textArea.append("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \n");
     textArea.append("The amount of money is: "+total+"\n");
     textArea.append("The amount of change is: \n"+bill1+" in bills \n");
     textArea.append(quarter1+"in quarters \n");
     textArea.append(dime1+"in dimes \n");
     textArea.append(nickel1+"in nickels \n");
-    textArea.append(coin1+" in cents \n");
+    textArea.append(coin1+" in cents \n\n");
   }
 }

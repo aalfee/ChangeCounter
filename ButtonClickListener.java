@@ -11,7 +11,6 @@ class ButtonClickListener implements ActionListener {
     public ButtonClickListener(JTextField textField, TextArea textArea) {
         this.textField = textField;
         textArea1 = textArea;
-        textArea1.setText("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -21,19 +20,18 @@ class ButtonClickListener implements ActionListener {
         
         // Call method from SaveMoney class to process input
         SaveMoney.processInput(userInput);
+        
 
             try {
+                SaveDate.main(null);
+                ReadDate.main(null);
+                ReadDate.printDate(textArea1);
                 SaveMoney.main(null);
                 ReadMoney.main(null);
                 ReadMoney.processOutput(textArea1);
             } catch (Exception e1) {
-                // TODO Auto-generated catch block
                 e1.printStackTrace();
             }
-        
-        
-
-        
-        
     }
+    
 }
